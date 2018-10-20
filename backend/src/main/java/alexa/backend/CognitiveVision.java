@@ -1,5 +1,17 @@
 package alexa.backend;
 
 public class CognitiveVision {
-//yes	
+
+	private static final String API_KEY = "";
+	
+	public CognitiveVision() {
+		//TODO: create link to azure
+	}
+	
+	public String getImageDescription (String url) {
+		return "";
+	}
+	
+	
+	//yes
 }
