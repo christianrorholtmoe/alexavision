@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @author christian
  *
  */
+@RestController
 public class AlexaBackendController {
+
 
 	
 	
