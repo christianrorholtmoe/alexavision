@@ -12,9 +12,6 @@ public class Queue {
 	private static Queue queue  = new Queue();
 	
 	
-	//Azure queue name
-	private static final String QUEUE_NAME = "AlexaBackendQueue";
-
 	
 	// Define the connection-string with your values.
 	public static final String storageConnectionString =
@@ -22,7 +19,12 @@ public class Queue {
 	    "AccountName=your_storage_account;" +
 	    "AccountKey=your_storage_account_key";
 	
-	private CloudQueue queue;
+	//the queueu on which we will work
+	private CloudQueue cloudqueue;
+	
+	//Azure queue name
+	private static final String QUEUE_NAME = "AlexaBackendQueue";
+
 	
 	//Singelton contsructor
 	private Queue() {
