@@ -7,11 +7,10 @@ import com.microsoft.azure.storage.queue.*;
 
 
 //Singelton class for queue management
+
 public class Queue {
 	
 	private static Queue queue  = new Queue();
-	
-	
 	
 	// Define the connection-string with your values.
 	public static final String storageConnectionString =
@@ -48,9 +47,47 @@ public class Queue {
 		    // Output the stack trace.
 		    e.printStackTrace();
 		}
+			
+	}
+	
+	
+/*Add message to queue*/
+	public void addMessageToQueue(String s) {
+		try
+		{
+		 // Create a message and add it to the queue.
+		    CloudQueueMessage message = new CloudQueueMessage(s);
+		    queue.addMessage(message);
+		}
+		catch (Exception e)
+		{
+		    // Output the stack trace.
+		    e.printStackTrace();
+		}
+	}
+	
+	
+	public String getMessageFromQueue() {
 		
-		
-		
+		try {
+		// Retrieve the first visible message in the queue.
+	    CloudQueueMessage retrievedMessage = queue.retrieveMessage();
+
+	    if (retrievedMessage != null)
+	    {
+	        
+	    	//get the message string
+	    	//String ret = retreivedMessage.getString()
+	    	
+	    	// Process the message in less than 30 seconds, and then delete the message.
+	        queue.deleteMessage(retrievedMessage);
+	    }
+	}
+	catch (Exception e)
+	{
+	    // Output the stack trace.
+	    e.printStackTrace();
+	}
 	}
 	
 	public static Queue getQueue() {
