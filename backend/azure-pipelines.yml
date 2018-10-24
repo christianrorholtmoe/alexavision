@@ -12,3 +12,9 @@ variables:
 steps:
 - script: docker build -f 'backend/Dockerfile' -t $(imageName) .
   displayName: 'alexa backend docker build'
+  
+  script: |
+    docker login -u $(dockerId) -p $(dockerPassword)
+    docker tag $(imageName) $(dockerId)/$(imageName)
+    docker push $(dockerId)/$(imageName)
+  displayName: 'push to docker hub'
