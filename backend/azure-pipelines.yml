@@ -12,6 +12,6 @@ variables:
 steps:
 - script: docker build -f 'backend/Dockerfile' -t $(imageName) .
   displayName: 'alexa backend docker build'
-  displayName: 'alexa backend - docker build and push'
+  
   
   
