@@ -7,7 +7,7 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 variables:
-  imageName: 'alexabackend:$(build.buildId)'
+  imageName: 'alexabackend'
 
 steps:
 - script: docker build -f 'backend/Dockerfile' -t $(imageName) .
