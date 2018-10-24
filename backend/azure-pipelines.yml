@@ -10,10 +10,8 @@ variables:
   imageName: 'alexabackend:$(build.buildId)'
 
 steps:
-- script: |
-displayName: 'alexa backend - docker build and push'
-    docker build -f 'Dockerfile' -t $(imageName) .
-    docker login -u $(dockerId) -p $(dockerPassword)
-    docker tag $(imageName) $(dockerId)/$(imageName)
-    docker push $(dockerId)/$(imageName)
-  displayName: 'push to docker hub'
+- script: docker build -f 'backend/Dockerfile' -t $(imageName) .
+  displayName: 'alexa backend docker build'
+  displayName: 'alexa backend - docker build and push'
+  
+  
