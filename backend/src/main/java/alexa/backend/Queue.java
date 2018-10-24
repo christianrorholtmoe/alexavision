@@ -10,23 +10,23 @@ import com.microsoft.azure.storage.queue.*;
 
 public class Queue {
 	
-	private static Queue queue  = new Queue();
 	
-	// Define the connection-string with your values.
+	// Define the connection-string .
+	
 	public static final String storageConnectionString =
-	    "DefaultEndpointsProtocol=http;" +
-	    "AccountName=your_storage_account;" +
-	    "AccountKey=your_storage_account_key";
+	    "DefaultEndpointsProtocol=https;" +
+	    "AccountName=storagealexabackend;" +
+	    "AccountKey=plXS3adPyrqrrf6uly/zjjcP3jN9iu3Po/dBM6JS/o4Mfqzfg6y7abrkIHfIzfaqMpdOaklT6lUm52qFlZKTYQ==";
 	
 	//the queueu on which we will work
 	private CloudQueue cloudqueue;
 	
 	//Azure queue name
-	private static final String QUEUE_NAME = "AlexaBackendQueue";
+	private static final String QUEUE_NAME = "imagequeue";
 
 	
-	//Singelton contsructor
-	private Queue() {
+	//Contsructor
+	public Queue() {
 		try
 		{
 		    // Retrieve storage account from connection-string.
@@ -37,10 +37,10 @@ public class Queue {
 		   CloudQueueClient queueClient = storageAccount.createCloudQueueClient();
 
 		   // Retrieve a reference to a queue.
-		   queue = queueClient.getQueueReference(QUEUE_NAME);
+		   cloudqueue = queueClient.getQueueReference(QUEUE_NAME);
 
 		   // Create the queue if it doesn't already exist.
-		   queue.createIfNotExists();
+		   cloudqueue.createIfNotExists();
 		}
 		catch (Exception e)
 		{
@@ -57,7 +57,7 @@ public class Queue {
 		{
 		 // Create a message and add it to the queue.
 		    CloudQueueMessage message = new CloudQueueMessage(s);
-		    queue.addMessage(message);
+		    cloudqueue.addMessage(message);
 		}
 		catch (Exception e)
 		{
@@ -69,30 +69,61 @@ public class Queue {
 	
 	public String getMessageFromQueue() {
 		
+		String ret = "";
+		
 		try {
 		// Retrieve the first visible message in the queue.
-	    CloudQueueMessage retrievedMessage = queue.retrieveMessage();
+	    CloudQueueMessage retrievedMessage = cloudqueue.retrieveMessage();
 
 	    if (retrievedMessage != null)
 	    {
 	        
 	    	//get the message string
-	    	//String ret = retreivedMessage.getString()
+	    	ret = retrievedMessage.getMessageContentAsString();
 	    	
 	    	// Process the message in less than 30 seconds, and then delete the message.
-	        queue.deleteMessage(retrievedMessage);
+	    	cloudqueue.deleteMessage(retrievedMessage);
+	  
 	    }
 	}
 	catch (Exception e)
 	{
 	    // Output the stack trace.
 	    e.printStackTrace();
+
 	}
+
+		return ret;
 	}
 	
-	public static Queue getQueue() {
-		return queue;
+
+public String peekAtMessageFromQueue() {
+		
+		String ret = "";
+		
+		try {
+		// Retrieve the first visible message in the queue.
+	    CloudQueueMessage retrievedMessage = cloudqueue.peekMessage();
+
+	    if (retrievedMessage != null)
+	    {
+	        
+	    	//get the message string
+	    	ret = retrievedMessage.getMessageContentAsString();
+	    	
+	    	
+	    }
 	}
+	catch (Exception e)
+	{
+	    // Output the stack trace.
+	    e.printStackTrace();
+
+	}
+
+		return ret;
+	}
+
 	
 	
 	
