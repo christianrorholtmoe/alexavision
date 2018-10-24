@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AlexaBackendController {
 
+	
+	//class vars
 	CognitiveVision cv = new CognitiveVision();
 	Queue q = new Queue();
 	
