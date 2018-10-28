@@ -29,5 +29,11 @@ public class AlexaBackendController {
     public String getImagedescription() {        
 		return q.getMessageFromQueue();    	    	
     }
+
+	@RequestMapping("/")
+    public String defaultmapping() {        
+		return "Velkommen til MIN app!";    	    	
+    }
+
 	
 }
