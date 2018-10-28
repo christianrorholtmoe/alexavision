@@ -32,7 +32,7 @@ public class AlexaBackendController {
 
 	@RequestMapping("/")
     public String defaultmapping() {        
-		return "Velkommen til MIN app!";    	    	
+		return "Velkommen til MIN app! - endelig";    	    	
     }
 
 	
