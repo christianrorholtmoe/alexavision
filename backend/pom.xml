@@ -64,13 +64,14 @@
  <configuration>
    <deploymentType>jar</deploymentType>
 
-   <!-- configure app to run on port 80, required by App Service -->
+   <!-- configure app to run on port 80, required by App Service 
    <appSettings>
      <property> 
        <name>JAVA_OPTS</name> 
        <value>-Dserver.port=80</value> 
      </property> 
    </appSettings>
+   -->
 
    <!-- Web App information -->
    <resourceGroup>rgAlexaBackEnd</resourceGroup>
