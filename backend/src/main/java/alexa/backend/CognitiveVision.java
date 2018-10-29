@@ -64,14 +64,8 @@ public class CognitiveVision {
 	                // Format and display the JSON response.
 	                String jsonString = EntityUtils.toString(entity);
 	                json = new JSONObject(jsonString);
-	                description = json.getJSONObject("description").getJSONArray("captions").getJSONObject(0).getString("text");
-	            	System.out.println(description);
-	               
-	                //System.out.println("REST Response:\n");
-	                //System.out.println(json.toString(2));
-
-	                
-	               
+	                description = json.getJSONObject("description").getJSONArray("captions").getJSONObject(0).toString();
+	            	System.out.println(description);	               
 	               	            }
 	        } catch (Exception e) {
 	            // Display error message.
