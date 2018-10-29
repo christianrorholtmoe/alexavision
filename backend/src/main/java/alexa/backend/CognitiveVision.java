@@ -18,14 +18,11 @@ public class CognitiveVision {
 
 	private static final String SUBSCRIPTION_KEY = "47fc7169755f4b87a8125dbafbedab72";
 	
-	//TODO: REPLACE med North Europe
+	//URL of cognitive services in North Europe
 	private static final String uriBase =
-            "https://northeurope.api.cognitive.microsoft.com/vision/v1.0/analyze";
-
+            "https://northeurope.api.cognitive.microsoft.com/vision/v1.0/analyze"; 
 	
- 
-	
-	//empty constructor. TODO: 
+	//empty constructor. 
 	public CognitiveVision() {
 		
 	}
