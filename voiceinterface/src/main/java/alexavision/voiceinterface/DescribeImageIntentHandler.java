@@ -7,14 +7,14 @@ import com.amazon.ask.request.Predicates;
 
 import java.util.Optional;
 
-public class HelloWorldIntentHandler implements RequestHandler {
+public class DescribeImageIntentHandler implements RequestHandler {
 
-     @Override
+     
      public boolean canHandle(HandlerInput input) {
         return input.matches(Predicates.intentName("HelloWorldIntent"));
      }
 
-     @Override
+     
      public Optional<Response> handle(HandlerInput input) {
          String speechText = "Hello world";
          return input.getResponseBuilder()

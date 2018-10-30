@@ -11,14 +11,13 @@ import java.util.Optional;
 public class LaunchRequestHandler implements RequestHandler {
 	
 	//The canHandle method returns true if the incoming request is a LaunchRequest. 
-     @Override
+
      public boolean canHandle(HandlerInput input) {
          return input.matches(Predicates.requestType(LaunchRequest.class));
      }
 
      
      //The handle method generates and returns a basic greeting response with response objects such as Speech, Card, and Reprompt which you can find more information here.
-     @Override
      public Optional<Response> handle(HandlerInput input) {
          String speechText = "Welcome to the Alexa Skills Kit, you can say hello";
          return input.getResponseBuilder()

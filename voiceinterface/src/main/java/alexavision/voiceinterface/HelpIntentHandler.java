@@ -9,12 +9,10 @@ import java.util.Optional;
 
 public class HelpIntentHandler implements RequestHandler {
 
-    @Override
     public boolean canHandle(HandlerInput input) {
         return input.matches(intentName("AMAZON.HelpIntent"));
     }
 
-    @Override
     public Optional<Response> handle(HandlerInput input) {
         String speechText = "You can say hello to me!";
         return input.getResponseBuilder()

@@ -2,22 +2,25 @@ package alexavision.voiceinterface;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
-import com.amazon.ask.dispatcher.request.handler.*;
 import com.amazon.ask.model.Response;
-import static com.amazon.ask.request.Predicates.intentName;
 
 import java.util.Optional;
 
-public class CancelandStopIntentHandler implements RequestHandler {
+import static com.amazon.ask.request.Predicates.intentName;
+
+public class FallbackIntentHandler implements RequestHandler {
 
     public boolean canHandle(HandlerInput input) {
-        return input.matches(intentName("AMAZON.StopIntent").or(intentName("AMAZON.CancelIntent")));
+        return input.matches(intentName("AMAZON.FallbackIntent"));
     }
 
+
     public Optional<Response> handle(HandlerInput input) {
+        String speechText = "Sorry, I don't know that. You can say try saying help!";
         return input.getResponseBuilder()
-                .withSpeech("Goodbye")
-                .withSimpleCard("HelloWorld", "Goodbye")
+                .withSpeech(speechText)
+                .withSimpleCard("HelloWorld", speechText)
+                .withReprompt(speechText)
                 .build();
     }
 }
