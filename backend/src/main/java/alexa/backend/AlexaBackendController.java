@@ -19,7 +19,7 @@ public class AlexaBackendController {
 	CognitiveVision cv = new CognitiveVision();
 	Queue q = new Queue();
 	
-	@RequestMapping("/x")
+	@RequestMapping("/describeImage")
     public void describeImage(@RequestParam(value="url") String url) {
     	q.addMessageToQueue(cv.describeImage(url));
 
