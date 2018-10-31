@@ -19,7 +19,7 @@ public class LaunchRequestHandler implements RequestHandler {
      
      //The handle method generates and returns a basic greeting response with response objects such as Speech, Card, and Reprompt which you can find more information here.
      public Optional<Response> handle(HandlerInput input) {
-         String speechText = "Hey! Feel free to ask me what I have seen today";
+         String speechText = "Hey! Feel free to ask me what I have seen today!";
          return input.getResponseBuilder()
                  .withSpeech(speechText)
                  .withSimpleCard("HelloWorld", speechText)
