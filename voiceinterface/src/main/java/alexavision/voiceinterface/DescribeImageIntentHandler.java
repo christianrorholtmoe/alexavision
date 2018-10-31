@@ -16,7 +16,7 @@ public class DescribeImageIntentHandler implements RequestHandler {
 
      
      public Optional<Response> handle(HandlerInput input) {
-         String speechText = "Hello world";
+         String speechText = "I have seen something from the Azure queue";
          return input.getResponseBuilder()
                  .withSpeech(speechText)
                  .withSimpleCard("HelloWorld", speechText)

@@ -14,7 +14,8 @@ import com.amazon.ask.SkillStreamHandler;
                         new DescribeImageIntentHandler(),
                         new HelpIntentHandler(),
                         new LaunchRequestHandler(),
-                        new SessionEndedRequestHandler())
+                        new SessionEndedRequestHandler(),
+                        new FallbackIntentHandler())
                  .build();
      }
 
