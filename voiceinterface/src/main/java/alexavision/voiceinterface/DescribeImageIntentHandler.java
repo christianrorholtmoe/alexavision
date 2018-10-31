@@ -11,7 +11,7 @@ public class DescribeImageIntentHandler implements RequestHandler {
 
      
      public boolean canHandle(HandlerInput input) {
-        return input.matches(Predicates.intentName("HelloWorldIntent"));
+        return input.matches(Predicates.intentName("DescribeImageIntent"));
      }
 
      
