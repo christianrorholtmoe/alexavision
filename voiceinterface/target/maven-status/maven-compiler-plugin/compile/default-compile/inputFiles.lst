@@ -1,7 +1,8 @@
-C:\Users\christian\git\alexavision\voiceinterface\src\main\java\alexavision\voiceinterface\SessionEndedRequestHandler.java
-C:\Users\christian\git\alexavision\voiceinterface\src\main\java\alexavision\voiceinterface\DescribeImageIntentHandler.java
-C:\Users\christian\git\alexavision\voiceinterface\src\main\java\alexavision\voiceinterface\VisionStreamHandler.java
-C:\Users\christian\git\alexavision\voiceinterface\src\main\java\alexavision\voiceinterface\LaunchRequestHandler.java
-C:\Users\christian\git\alexavision\voiceinterface\src\main\java\alexavision\voiceinterface\FallbackIntentHandler.java
-C:\Users\christian\git\alexavision\voiceinterface\src\main\java\alexavision\voiceinterface\HelpIntentHandler.java
-C:\Users\christian\git\alexavision\voiceinterface\src\main\java\alexavision\voiceinterface\CancelandStopIntentHandler.java
+C:\Users\christian\git\alexavision\voiceinterface\src\main\java\alexavision\voiceinterface\handler\FallbackIntentHandler.java
+C:\Users\christian\git\alexavision\voiceinterface\src\main\java\alexavision\voiceinterface\handler\HelpIntentHandler.java
+C:\Users\christian\git\alexavision\voiceinterface\src\main\java\alexavision\voiceinterface\handler\SessionEndedRequestHandler.java
+C:\Users\christian\git\alexavision\voiceinterface\src\main\java\alexavision\voiceinterface\ImageDescriber.java
+C:\Users\christian\git\alexavision\voiceinterface\src\main\java\alexavision\voiceinterface\handler\DescribeImageIntentHandler.java
+C:\Users\christian\git\alexavision\voiceinterface\src\main\java\alexavision\voiceinterface\handler\VisionStreamHandler.java
+C:\Users\christian\git\alexavision\voiceinterface\src\main\java\alexavision\voiceinterface\handler\CancelandStopIntentHandler.java
+C:\Users\christian\git\alexavision\voiceinterface\src\main\java\alexavision\voiceinterface\handler\LaunchRequestHandler.java

@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class AlexaBackendController {
 
 	
+	//http://localhost:8080/describeImage?url=http://e24.vgc.no/drpublish/images/article/2015/11/13/23560926/1/default/Anita.jpg
+	//https://alexavision.azurewebsites.net/getImagedescription
+	//https://github.com/kasperkamperman/MobileCameraTemplate.git
+	
 	//class vars
 	CognitiveVision cv = new CognitiveVision();
 	Queue q = new Queue();
