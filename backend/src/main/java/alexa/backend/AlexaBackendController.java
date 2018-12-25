@@ -22,12 +22,22 @@ public class AlexaBackendController {
 	//class vars
 	CognitiveVision cv = new CognitiveVision();
 	Queue q = new Queue();
+
 	
+	//REST API for describing an image specified with an URL
 	@RequestMapping("/describeImage")
     public void describeImage(@RequestParam(value="url") String url) {
     	q.addMessageToQueue(cv.describeImage(url));
 
     }
+	
+	//RESt API for describing an image delivered as a media stream
+	@RequestMapping("/describeImageStream")
+    public void describeImageStream(@RequestParam(value="url") String url) {
+    	q.addMessageToQueue(cv.describeImage(url));
+
+    }
+
 	
 	@RequestMapping("/getImagedescription")
     public String getImagedescription() {        
